@@ -21,7 +21,7 @@ class ProductsRepository implements IProductsRepository {
     price,
     quantity,
   }: ICreateProductDTO): Promise<Product> {
-    // TODO
+    return this.ormRepository.create({ name, price, quantity });
   }
 
   public async findByName(name: string): Promise<Product | undefined> {
