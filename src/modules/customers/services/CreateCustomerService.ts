@@ -19,6 +19,12 @@ class CreateCustomerService {
 
   public async execute({ name, email }: IRequest): Promise<Customer> {
     const customer = this.customersRepository.create({ name, email });
+    const findCustomerByEmail = this.customersRepository.findByEmail(email);
+
+    if (findCustomerByEmail) {
+      throw new AppError('user with this email been exists');
+    }
+
     return customer;
   }
 }
