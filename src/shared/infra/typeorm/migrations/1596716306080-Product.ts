@@ -20,8 +20,14 @@ export default class Product1596716306080 implements MigrationInterface {
             isUnique: true,
           },
           {
+            name: 'quantity',
+            type: 'integer',
+          },
+          {
             name: 'price',
             type: 'decimal',
+            scale: 2,
+            precision: 10,
           },
           {
             name: 'created_at',

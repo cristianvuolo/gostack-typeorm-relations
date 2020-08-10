@@ -17,14 +17,18 @@ export default class OrderProduct1596716332618 implements MigrationInterface {
           {
             name: 'order_id',
             type: 'uuid',
+            isNullable: true,
           },
           {
             name: 'product_id',
             type: 'uuid',
+            isNullable: true,
           },
           {
             name: 'price',
             type: 'decimal',
+            scale: 2,
+            precision: 10,
           },
           {
             name: 'quantity',

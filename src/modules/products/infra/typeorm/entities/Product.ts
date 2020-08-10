@@ -20,13 +20,10 @@ class Product {
   @Column('decimal')
   price: number;
 
-  @Column('number')
+  @Column()
   quantity: number;
 
-  @OneToMany(
-    type => OrdersProducts,
-    OrdersProducts => OrdersProducts.product_id,
-  )
+  @OneToMany(() => OrdersProducts, orderProducts => orderProducts.product)
   order_products: OrdersProducts[];
 
   @CreateDateColumn()
